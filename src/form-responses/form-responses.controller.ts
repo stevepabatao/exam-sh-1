@@ -21,14 +21,14 @@ export class FormResponsesController {
       const q = response.data.responses.map(item => item.questions);
       const filteredQuestions = this.filterQuestions(q, JSON.parse(filters));
       
-      let x = filterQuestions(q, filterNodes);
+      let x = filteredQuestions;
 
       x = Object.assign({}, x, { totalResponse: x.flat().length });
       x = Object.assign({}, x, { totalPage: 1 });
 
-      console.log(X);
+      console.log(x);
 
-      return X;
+      return x;
     } catch (error) {
       console.log(error);
       throw new Error('Error fetching responses from Fillout.com API');
